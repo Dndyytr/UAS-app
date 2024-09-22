@@ -146,6 +146,7 @@ h1 {
 }
 
 .wadah {
+  z-index: 1;
   position: relative;
   flex-direction: column;
   align-items: center;
@@ -359,6 +360,7 @@ form .wadah-password {
 
 /* footer */
 footer {
+  z-index: 9999999999;
   box-shadow: 0 -1px 3px rgba(255, 255, 255, 0.813);
   position: fixed;
   overflow: hidden;
