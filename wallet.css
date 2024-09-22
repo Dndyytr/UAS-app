@@ -116,9 +116,9 @@ header {
   background: linear-gradient(
     90deg,
     rgb(30, 30, 30),
-    rgb(17, 19, 35),
-    rgb(16, 22, 58),
-    rgb(17, 19, 35),
+    rgb(25, 30, 63),
+    rgb(0, 17, 113),
+    rgb(25, 30, 63),
     rgb(30, 30, 30)
   );
   padding: 1rem;

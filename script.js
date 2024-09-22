@@ -1,6 +1,6 @@
 // Simulasi data login (username dan password yang benar)
-const correctUsername = "admin";
-const correctPassword = "admin";
+const correctUsername = "mahasiswa";
+const correctPassword = "mahasiswa";
 
 // elemen
 const usernameInput = document.getElementById("username");
