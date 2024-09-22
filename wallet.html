@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-wallet</title>
+    <link rel="stylesheet" href="wallet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- loading -->
+    <div class="loading"></div>
+    <!-- header -->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a id="home" href="index.html"
+              ><i class="fa-solid fa-house"></i><br />Beranda</a
+            >
+          </li>
+          <li>
+            <a id="Rangking" href="rangking.html"
+              ><i class="fa-solid fa-ranking-star"></i><br />
+              Rangking</a
+            >
+          </li>
+          <li>
+            <a id="wallet" href="wallet.html"
+              ><i class="fa-solid fa-wallet"></i><br />E-Wallet</a
+            >
+          </li>
+          <li>
+            <a id="konversi" href="suhu.html">
+              <i class="fa-solid fa-temperature-three-quarters"></i
+              ><br />Konversi Suhu</a
+            >
+          </li>
+          <li>
+            <a id="kalkulator" href="kalkulator.html">
+              <i class="fa-solid fa-calculator"></i><br />Kalkulator</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- header -->
+    <!-- peringatan -->
+    <div class="success">
+      Transaksi berhasil <i class="fa-solid fa-check"></i>
+    </div>
+    <div class="error"></div>
+    <!-- peringatan -->
+    <div class="container">
+      <h1>E-Wallet <i class="fa-solid fa-wallet"></i></h1>
+      <img src="img/vektor 4.svg" alt="vektor 4" />
+      <div class="menu-buttons">
+        <button onclick="showMenu('income')">
+          <i class="fa-solid fa-money-bill-trend-up"></i><br />Pemasukan
+        </button>
+        <button onclick="showMenu('expense')">
+          <i class="fa-solid fa-money-bill-transfer"></i><br />Pengeluaran
+        </button>
+        <button onclick="showMenu('balance')">
+          <i class="fa-solid fa-money-check"></i><br />Cek Saldo
+        </button>
+        <button onclick="showMenu('transactionHistory')">
+          <i class="fa-solid fa-clipboard-list"></i><br />
+          Riwayat Transaksi
+        </button>
+      </div>
+
+      <div id="mainMenu" style="display: none"></div>
+
+      <div id="incomeMenu" style="display: none">
+        <h2>Pemasukan</h2>
+        <div class="form-group">
+          <label for="incomeName">Nama Pemasukan:</label>
+          <input
+            type="text"
+            id="incomeName"
+            placeholder="Masukkan nama pemasukan"
+            required
+          />
+          <label for="incomeAmount">Jumlah:</label>
+          <input
+            type="number"
+            id="incomeAmount"
+            placeholder="Masukkan jumlah"
+            required
+          />
+          <button onclick="addTransaction('pemasukan')">
+            Tambah Pemasukan
+          </button>
+        </div>
+        <div id="incomeHistory"></div>
+        <button class="kembali" onclick="backToMainMenu()">Kembali</button>
+      </div>
+
+      <div id="expenseMenu" style="display: none">
+        <h2>Pengeluaran</h2>
+        <div class="form-group">
+          <label for="expenseName">Nama Pengeluaran:</label>
+          <input
+            type="text"
+            id="expenseName"
+            placeholder="Masukkan nama pengeluaran"
+            required
+          />
+
+          <label for="expenseAmount">Jumlah:</label>
+          <input
+            type="number"
+            id="expenseAmount"
+            placeholder="Masukkan jumlah"
+            required
+          />
+          <button onclick="addTransaction('pengeluaran')">
+            Tambah Pengeluaran
+          </button>
+        </div>
+
+        <div id="expenseHistory"></div>
+        <button class="kembali" onclick="backToMainMenu()">Kembali</button>
+      </div>
+
+      <div id="balanceMenu" style="display: none">
+        <h2>Cek Saldo</h2>
+        <div id="balanceSummary">
+          <p>Total Pemasukan: <span id="totalIncome">Rp 0</span></p>
+          <p>Total Pengeluaran: <span id="totalExpense">Rp 0</span></p>
+          <p>Saldo Saat Ini: <span id="currentBalance">Rp 0</span></p>
+        </div>
+        <button class="kembali" onclick="backToMainMenu()">Kembali</button>
+      </div>
+
+      <div id="transactionHistoryMenu" style="display: none">
+        <h2>Riwayat Transaksi</h2>
+        <div id="transactionHistory"></div>
+        <button class="kembali" onclick="backToMainMenu()">Kembali</button>
+      </div>
+    </div>
+
+    <script src="wallet.js"></script>
+  </body>
+</html>

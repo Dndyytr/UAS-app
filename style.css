@@ -1,0 +1,573 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition: none;
+  }
+}
+
+body,
+html {
+  border: none;
+  scroll-behavior: smooth;
+  background-color: rgb(20, 20, 20);
+  position: relative;
+  height: 100%;
+  color: white;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+/* reset */
+.loading {
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    rgb(0, 81, 255),
+    rgb(21, 0, 255),
+    rgb(18, 0, 218),
+    rgb(4, 0, 120)
+  );
+  height: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999999999999;
+}
+
+body::before,
+body::after {
+  width: 30%;
+  position: absolute;
+  height: 50%;
+  content: "";
+  background-color: rgba(21, 0, 255, 0.164);
+  filter: blur(75px);
+}
+
+body::after {
+  right: 0;
+  top: 40%;
+  border-radius: 50rem 0 50rem 50rem;
+}
+
+body::before {
+  left: 0;
+  border-radius: 0 50rem 50rem 50rem;
+}
+/* mulai */
+.peringatan {
+  background: linear-gradient(
+    100deg,
+    rgb(255, 0, 0),
+    rgba(255, 255, 255, 0.126)
+  );
+  position: absolute;
+  right: 0;
+  padding: 0.5rem 0.6rem 0.5rem 1rem;
+  top: 0;
+  border-radius: 4rem 0 4rem 4rem;
+  font-size: 0.9rem;
+  animation: peringatan 1s infinite;
+  transform: translate(15rem, -15rem);
+  transition: 0.8s;
+  z-index: 999999999999999;
+}
+
+.peringatan.active {
+  transform: translate(0, 0);
+}
+
+@keyframes peringatan {
+  0% {
+    box-shadow: 0 0 0 white;
+  }
+
+  50% {
+    box-shadow: 0 0 7px white;
+  }
+
+  100% {
+    box-shadow: 0 0 0 white;
+  }
+}
+
+h1 {
+  text-align: center;
+}
+
+.wadah {
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  height: 75%;
+  img {
+    width: 18rem;
+    margin: -1.5rem -2rem -2.5rem -2rem;
+  }
+}
+.wadah.satu {
+  display: flex;
+}
+
+.wadah.satu form {
+  box-shadow: 0 0 10px black;
+  z-index: 9999999;
+  bottom: 5%;
+  position: absolute;
+  overflow: hidden;
+  padding: 0.5rem;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.089);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  border-radius: 0.5rem;
+  font-weight: 500;
+  legend {
+    text-align: center;
+    line-height: 3rem;
+    font-weight: 700;
+    z-index: 9999;
+    color: white;
+    text-shadow: 0 0 5px black;
+  }
+
+  label {
+    margin-bottom: 0.5rem;
+    z-index: 99999;
+  }
+
+  #username {
+    z-index: 999999999;
+    margin-bottom: 0.5rem;
+    padding: 0.2rem;
+    border-radius: 0.4rem;
+    border: none;
+    background-color: rgb(24, 24, 24);
+    color: white;
+    font-weight: 400;
+  }
+
+  #login {
+    z-index: 9999999;
+    margin: 1rem 0;
+    border-radius: 0.4rem;
+    border: none;
+    padding: 0.2rem;
+    background: linear-gradient(
+      90deg,
+      rgb(0, 81, 255),
+      rgb(21, 0, 255),
+      rgb(0, 4, 218),
+      rgb(4, 0, 120)
+    );
+    color: white;
+    cursor: pointer;
+    transition: 0.8s;
+  }
+
+  #login:hover {
+    filter: brightness(5);
+  }
+
+  input:focus {
+    color: white;
+    outline: solid blue;
+    background-color: rgb(24, 24, 24);
+  }
+
+  .lupa-password {
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    color: blue;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.062);
+    transition: 0.4s;
+    width: max-content;
+  }
+  .lupa-password:hover {
+    color: white;
+  }
+}
+
+form .wadah-password:focus-within {
+  outline: solid blue;
+}
+
+form .wadah-password {
+  cursor: text;
+  z-index: 9999;
+  background-color: rgb(24, 24, 24);
+  position: relative;
+  padding: 0.3rem;
+  border-radius: 0.4rem;
+
+  #password {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 400;
+  }
+
+  .fa-solid {
+    position: absolute;
+    right: 0.5rem;
+    top: 30%;
+    cursor: pointer;
+  }
+}
+
+.wadah.dua {
+  display: none;
+  position: relative;
+  .tombol {
+    margin-top: -1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+    span {
+      font-weight: 500;
+    }
+  }
+}
+
+.tombol .tmpt.rangking {
+  border-radius: 4rem 4rem 0 4rem;
+  background: linear-gradient(
+    130deg,
+    rgba(0, 0, 6, 0.16) 3%,
+    rgba(0, 0, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+}
+.tombol .tmpt.wallet {
+  border-radius: 4rem 4rem 4rem 0;
+  background: linear-gradient(
+    230deg,
+    rgba(0, 0, 0, 0.16) 3%,
+    rgba(0, 0, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+}
+.tombol .tmpt.konversi {
+  border-radius: 4rem 0 4rem 4rem;
+  background: linear-gradient(
+    20deg,
+    rgba(0, 0, 0, 0.16) 3%,
+    rgba(0, 0, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+}
+.tombol .tmpt.kalkulator {
+  border-radius: 0 4rem 4rem 4rem;
+  background: linear-gradient(
+    330deg,
+    rgba(0, 0, 0, 0.16) 3%,
+    rgba(0, 0, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+}
+
+.tombol .tmpt.logout {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.16) 3%,
+    rgba(0, 0, 255, 0.632) 50%,
+    rgba(255, 255, 255, 0.16) 100%
+  );
+  transform: translateX(55%);
+  border-radius: 4rem 4rem 4rem 4rem;
+}
+
+.tombol .tmpt:hover {
+  filter: brightness(2.5);
+}
+
+.tombol .tmpt {
+  transition: 0.5s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.605);
+  cursor: pointer;
+  padding: 0.9rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  color: white;
+  text-decoration: none;
+  i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* footer */
+footer {
+  box-shadow: 0 -1px 3px rgba(255, 255, 255, 0.813);
+  position: fixed;
+  overflow: hidden;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgb(30, 30, 30),
+    rgb(17, 19, 35),
+    rgb(16, 22, 58),
+    rgb(17, 19, 35),
+    rgb(30, 30, 30)
+  );
+  text-align: center;
+  border-radius: 50rem 50rem 0 0;
+  span {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+
+  .fa-brands {
+    margin-top: 10px;
+    box-shadow: 0 0 5px black;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s;
+    background: linear-gradient(
+      130deg,
+      rgb(0, 0, 6) 3%,
+      rgb(17, 0, 255) 50%,
+      rgba(255, 255, 255, 0.16) 100%
+    );
+  }
+
+  .fa-brands::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.662) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    left: -100%;
+    top: 0;
+    border-radius: 0.5rem;
+    transition: 0.5s;
+    z-index: 9;
+  }
+
+  .fa-brands:hover {
+    filter: brightness(5);
+  }
+
+  .fa-brands:hover::after {
+    left: 100%;
+  }
+
+  hr {
+    border: 1px solid white;
+  }
+  p {
+    font-weight: 500;
+    line-height: 2rem;
+    font-size: 1rem;
+    color: white;
+  }
+}
+
+/* media queris */
+@media screen and (max-width: 900px) {
+  .wadah.satu form {
+    position: relative;
+  }
+
+  .peringatan {
+    font-size: 0.8rem;
+  }
+
+  .wadah.dua .tombol {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .peringatan {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .peringatan {
+    font-size: 0.6rem;
+  }
+
+  .wadah.satu form {
+    width: 75%;
+  }
+
+  .wadah.satu form label,
+  .wadah.satu form input,
+  .wadah.satu form button,
+  .wadah.satu form .lupa-password,
+  .wadah.satu form .fa-solid,
+  footer p {
+    font-size: 0.9rem;
+  }
+
+  .wadah.dua .tombol span {
+    font-size: 0.75rem;
+  }
+
+  .tombol .tmpt i {
+    font-size: 1.6rem;
+  }
+
+  footer span {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .peringatan {
+    font-size: 0.5rem;
+  }
+
+  .wadah.satu form label,
+  .wadah.satu form input,
+  .wadah.satu form button,
+  .wadah.satu form .lupa-password,
+  .wadah.satu form .fa-solid,
+  footer p {
+    font-size: 0.8rem;
+  }
+
+  footer span {
+    font-size: 1.2rem;
+  }
+
+  .wadah.dua .tombol span {
+    font-size: 0.65rem;
+  }
+
+  .tombol .tmpt i {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .peringatan {
+    font-size: 0.4rem;
+  }
+
+  .wadah.satu form label,
+  .wadah.satu form input,
+  .wadah.satu form button,
+  .wadah.satu form .lupa-password,
+  .wadah.satu form .fa-solid,
+  footer p {
+    font-size: 0.7rem;
+  }
+
+  footer span {
+    font-size: 1rem;
+  }
+
+  .wadah.satu form {
+    position: absolute;
+    bottom: 5%;
+    .lupa-password {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .wadah.dua .tombol {
+    position: absolute;
+  }
+
+  .wadah.dua .tombol span {
+    font-size: 0.6rem;
+  }
+
+  .tombol .tmpt i {
+    font-size: 1.4rem;
+  }
+}

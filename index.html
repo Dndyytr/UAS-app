@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAS Algoritma dan Struktur Data</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- loading -->
+    <div class="loading"></div>
+    <!-- wadah 1 -->
+    <h1>UAS Algoritma</h1>
+    <div class="wadah satu">
+      <img src="img/vektor 1.svg" alt="vektor 1" />
+      <form action="" method="get" id="login-form">
+        <div class="peringatan">Username atau <br />Password Salah!</div>
+        <legend>Login</legend>
+        <label for="username">Username <i class="fa-solid fa-user"></i></label>
+        <input
+          type="text"
+          id="username"
+          required
+          placeholder="username"
+          autocomplete="username"
+        />
+        <label for="password">Password <i class="fa-solid fa-lock"></i></label>
+        <div class="wadah-password">
+          <input
+            type="password"
+            id="password"
+            required
+            placeholder="password"
+            autocomplete="current-password"
+          />
+          <i class="fa-solid fa-eye-slash"></i>
+        </div>
+        <button id="login" type="submit">LOGIN</button>
+        <a href="#" class="lupa-password">Lupa Password?</a>
+      </form>
+    </div>
+
+    <div class="wadah dua">
+      <img src="img/vektor 1.svg" alt="vektor 2" />
+      <div class="tombol">
+        <a href="rangking.html" class="tmpt rangking">
+          <i class="fa-solid fa-ranking-star"></i>
+          <span id="rangking">Rangking Customer</span>
+        </a>
+        <a href="wallet.html" class="tmpt wallet">
+          <i class="fa-solid fa-wallet"></i>
+          <span id="e-wallet">E-Wallet</span>
+        </a>
+        <a href="suhu.html" class="tmpt konversi">
+          <i class="fa-solid fa-temperature-three-quarters"></i>
+          <span id="konversi">Konversi Suhu</span>
+        </a>
+        <a href="kalkulator.html" class="tmpt kalkulator">
+          <i class="fa-solid fa-calculator"></i>
+          <span id="kalkulator">Kalkulator</span>
+        </a>
+        <a href="" class="tmpt logout" id="logout"
+          ><i class="fa-solid fa-right-from-bracket"></i><span>Logout</span></a
+        >
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+      <span
+        ><a
+          target="_blank"
+          href="https://www.instagram.com/dndy_tr?igsh=MXZqYmRoNnRoNHRubg=="
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a
+          target="_blank"
+          href="https://www.tiktok.com/@dndy_tr?_t=8pGlBIxd2VF&_r=1"
+          ><i class="fa-brands fa-tiktok"></i></a
+        ><a
+          target="_blank"
+          href="https://id.linkedin.com/in/dandy-taufiqurrochman-8b5106293"
+          ><i class="fa-brands fa-linkedin"></i></a
+        ><a target="_blank" href="https://wa.me/qr/VBBSIYPJTSQVF1"
+          ><i class="fa-brands fa-whatsapp"></i></a
+      ></span>
+      <hr />
+      <p>COPYRIGHT &copy; 2024 | CREATED BY DANDY TR</p>
+    </footer>
+    <!-- footer -->
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rangking</title>
+    <link rel="stylesheet" href="rangking.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- loading -->
+    <div class="loading"></div>
+    <!-- header -->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a id="home" href="index.html"
+              ><i class="fa-solid fa-house"></i><br />Beranda</a
+            >
+          </li>
+          <li>
+            <a id="Rangking" href="rangking.html"
+              ><i class="fa-solid fa-ranking-star"></i><br />
+              Rangking</a
+            >
+          </li>
+          <li>
+            <a id="wallet" href="wallet.html"
+              ><i class="fa-solid fa-wallet"></i><br />E-Wallet</a
+            >
+          </li>
+          <li>
+            <a id="konversi" href="suhu.html">
+              <i class="fa-solid fa-temperature-three-quarters"></i
+              ><br />Konversi Suhu</a
+            >
+          </li>
+          <li>
+            <a id="kalkulator" href="kalkulator.html">
+              <i class="fa-solid fa-calculator"></i><br />Kalkulator</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- header -->
+    <!-- peringatan -->
+    <div class="success"></div>
+    <div class="error"></div>
+    <!-- peringatan -->
+    <div class="container">
+      <h1>Rangking Customer <i class="fa-solid fa-ranking-star"></i></h1>
+      <img src="img/vektor 3.svg" alt="vektor 3" />
+      <div id="menu">
+        <button onclick="showSection('tambahData')">
+          <i class="fa-solid fa-plus"></i> <br />
+          Tambah Data <br />Customer
+        </button>
+        <button onclick="tampilkanData()">
+          <i class="fa-solid fa-clipboard-list"></i> <br />
+          Tampilkan Data dan <br />
+          Rangking Customer
+        </button>
+        <button onclick="showSection('cariCustomer')">
+          <i class="fa-solid fa-magnifying-glass"></i> <br />Cari Customer
+        </button>
+        <button onclick="showSection('editCustomer')">
+          <i class="fa-solid fa-pen-to-square"></i> <br />Edit Customer
+        </button>
+      </div>
+
+      <div id="tambahData" style="display: none">
+        <form id="customerForm">
+          <h2>Tambah Data Customer <i class="fa-solid fa-plus"></i></h2>
+          <label for="idCustomer">ID Customer :</label>
+          <input type="number" id="idCustomer" required />
+
+          <label for="nama">Nama Customer :</label>
+          <input type="text" id="nama" required />
+
+          <label for="tanggal">Tanggal (DD-MM-YYYY) :</label>
+          <input type="date" id="tanggal" required />
+
+          <label for="otakOtak">Total Pembelian Otak-Otak :</label>
+          <input type="number" id="otakOtak" step="0.01" required />
+
+          <label for="tahuBulat">Total Pembelian Tahu Bulat :</label>
+          <input type="number" id="tahuBulat" step="0.01" required />
+
+          <label for="sotong">Total Pembelian Sotong :</label>
+          <input type="number" id="sotong" step="0.01" required />
+
+          <button type="submit">Simpan Data</button>
+        </form>
+        <button class="kembali1">Kembali</button>
+      </div>
+
+      <div id="tampilkanData" style="display: none">
+        <h2>
+          Data dan Rangking Customer <i class="fa-solid fa-clipboard-list"></i>
+        </h2>
+        <div class="isi-data"></div>
+        <button id="hapusSemua" onclick="hapusSemuaData()">
+          Hapus Semua Data
+        </button>
+        <button class="kembali2">Kembali</button>
+      </div>
+
+      <div id="cariCustomer" style="display: none">
+        <h2>Cari Customer <i class="fa-solid fa-magnifying-glass"></i></h2>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Masukkan ID atau nama customer"
+          required
+        />
+        <button id="cari2" onclick="cariCustomer()">Cari</button>
+        <button class="kembali4">Kembali</button>
+        <div id="searchResult" style="display: none"></div>
+      </div>
+
+      <div id="editCustomer" style="display: none">
+        <h2>Edit Data Customer <i class="fa-solid fa-pen-to-square"></i></h2>
+        <input
+          type="text"
+          id="editSearchInput"
+          placeholder="Masukkan ID customer untuk edit"
+          required
+        />
+        <button id="cari" onclick="cariCustomerUntukEdit()">Cari</button>
+        <div id="editForm" style="display: none">
+          <form id="editCustomerForm">
+            <input type="hidden" id="editId" />
+            <label for="editNama">Nama Customer :</label>
+            <input type="text" id="editNama" required />
+
+            <label for="editTanggal">Tanggal (DD-MM-YYYY) :</label>
+            <input type="date" id="editTanggal" required />
+
+            <label for="editOtakOtak">Total Pembelian Otak-Otak :</label>
+            <input type="number" id="editOtakOtak" step="0.01" required />
+
+            <label for="editTahuBulat">Total Pembelian Tahu Bulat :</label>
+            <input type="number" id="editTahuBulat" step="0.01" required />
+
+            <label for="editSotong">Total Pembelian Sotong :</label>
+            <input type="number" id="editSotong" step="0.01" required />
+
+            <button id="update" type="submit">Update Data</button>
+          </form>
+        </div>
+        <button class="kembali3">Kembali</button>
+      </div>
+    </div>
+
+    <script src="rangking.js"></script>
+  </body>
+</html>

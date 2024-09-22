@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="kalkulator.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- peringatan -->
+     <div class="error">Mohon masukkan angka yang valid <i class="fa-solid fa-exclamation-triangle"></i></div>
+       <!-- loading -->
+    <div class="loading"></div>
+    <!-- header -->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a id="home" href="index.html"
+              ><i class="fa-solid fa-house"></i><br />Beranda</a
+            >
+          </li>
+          <li>
+            <a id="Rangking" href="rangking.html"
+              ><i class="fa-solid fa-ranking-star"></i><br />
+              Rangking</a
+            >
+          </li>
+          <li>
+            <a id="wallet" href="wallet.html"
+              ><i class="fa-solid fa-wallet"></i><br />E-Wallet</a
+            >
+          </li>
+          <li>
+            <a id="konversi" href="suhu.html">
+              <i class="fa-solid fa-temperature-three-quarters"></i
+              ><br />Konversi Suhu</a
+            >
+          </li>
+          <li>
+            <a id="kalkulator" href="kalkulator.html">
+              <i class="fa-solid fa-calculator"></i><br />Kalkulator</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- header -->
+    <div class="calculator">
+      <h1>Kalkulator  <i class="fa-solid fa-calculator"></i></h1>
+      <img src="img/vektor 6.svg" alt="vektor 6" />
+      <div class="wadah-kalkulator">
+        <div class="wadah-flex">
+        <div class="angka-pertama">
+          <label for="num1">Angka Pertama :</label>
+          <input type="number" id="num1" placeholder="Masukkan angka pertama" />
+        </div>
+        <div class="operasi">
+          <label for="operator">Operasi :</label>
+          <select id="operator">
+            <option value="*">x (Perkalian)</option>
+            <option value="/">/ (Pembagian)</option>
+            <option value="+">+ (Penjumlahan)</option>
+            <option value="-">- (Pengurangan)</option>
+            <option value="%">% (Modulus)</option>
+            <option value="^">^ (Pangkat)</option>
+            <option value="v">v (Akar Kuadrat)</option>
+            <option value="sin">sin (Sinus)</option>
+            <option value="cos">cos (Cosinus)</option>
+            <option value="tan">tan (Tangen)</option>
+            <option value="lingkaran">Lingkaran (Luas dan Volume Bola)</option>
+            <option value="kubus">Kubus (Luas Permukaan dan Volume)</option>
+          </select>
+        </div>
+    </div>
+
+        <label for="num2">Angka Kedua :</label>
+        <input
+          type="number"
+          id="num2"
+          placeholder="Masukkan angka kedua (jika perlu)"
+        />
+
+       
+      </div>
+      <button id="btnHitung" onclick="calculate()">Hitung</button>
+      <div class="wadah-hasil">
+      <div id="result"></div>
+    </div>
+    </div>
+
+    <script src="kalkulator.js"></script>
+  </body>
+</html>
