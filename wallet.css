@@ -496,6 +496,20 @@ th {
   top: 0;
 }
 
+@keyframes peringatan {
+  0% {
+    box-shadow: 0 0 0 white;
+  }
+
+  50% {
+    box-shadow: 0 0 7px white;
+  }
+
+  100% {
+    box-shadow: 0 0 0 white;
+  }
+}
+
 .error.active,
 .success.active {
   transform: translate(0, 0);
@@ -565,7 +579,8 @@ th {
   button,
   #balanceMenu #balanceSummary p,
   .success,
-  .error, #transactionHistory p {
+  .error,
+  #transactionHistory p {
     font-size: 0.9rem;
   }
 
@@ -646,7 +661,8 @@ th {
   button,
   #balanceMenu #balanceSummary p,
   .success,
-  .error, #transactionHistory p {
+  .error,
+  #transactionHistory p {
     font-size: 0.8rem;
   }
 
@@ -704,7 +720,8 @@ th {
   button,
   #balanceMenu #balanceSummary p,
   .success,
-  .error, #transactionHistory p {
+  .error,
+  #transactionHistory p {
     font-size: 0.7rem;
   }
 
