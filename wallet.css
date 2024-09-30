@@ -411,6 +411,21 @@ th {
   box-shadow: 0 0 5px white;
 }
 
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
 #balanceMenu,
 #transactionHistoryMenu {
   flex-direction: column;
@@ -432,11 +447,39 @@ th {
     border-radius: 2rem 0 2rem 0;
     box-shadow: 0 0 5px white;
   }
+
+  #balanceSummary::after,
+  #balanceSummary::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(
+      from var(--angle),
+      transparent 70%,
+      blue,
+      rgb(0, 162, 255),
+      rgb(0, 255, 204)
+    );
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.6rem;
+    z-index: -1;
+    padding: 7px;
+    animation: 4s spin linear infinite;
+  }
+
+  #balanceSummary::before {
+    filter: blur(6px);
+  }
+
   #balanceSummary {
-    background-color: rgba(255, 255, 255, 0.053);
+    position: relative;
+    background-color: rgb(40, 40, 40);
     padding: 1rem;
     border-radius: 0.6rem;
-    box-shadow: 0 0 4px rgb(0, 119, 255);
+    box-shadow: 0 0 4px rgba(0, 119, 255, 0.589);
     font-weight: 500;
     margin-bottom: 1rem;
   }

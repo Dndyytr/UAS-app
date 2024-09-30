@@ -267,6 +267,11 @@ form .wadah-password {
     right: 0.5rem;
     top: 30%;
     cursor: pointer;
+    transition: 0.5s;
+  }
+
+  .fa-solid {
+    color: blue;
   }
 }
 

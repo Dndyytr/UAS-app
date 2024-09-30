@@ -1,7 +1,3 @@
-// Simulasi data login (username dan password yang benar)
-const correctUsername = "mahasiswa";
-const correctPassword = "mahasiswa";
-
 // elemen
 const usernameInput = document.getElementById("username");
 const passwordInput = document.getElementById("password");
@@ -46,8 +42,8 @@ loginButton.addEventListener("click", (e) => {
     passwordInput.setCustomValidity("Password harus diisi!");
     passwordInput.reportValidity();
   } else if (
-    enteredUsername === correctUsername &&
-    enteredPassword === correctPassword
+    enteredUsername === "mahasiswa" &&
+    enteredPassword === "mahasiswa"
   ) {
     wadah1.style.display = "none";
     wadah2.style.display = "flex";

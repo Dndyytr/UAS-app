@@ -316,9 +316,11 @@ input:focus {
   background-color: rgb(24, 24, 24);
 }
 table {
-  margin-top: 5px;
+  margin: 5px 0 1rem 0;
   border-spacing: 0.5rem;
   table-layout: fixed;
+  border-bottom: 2px solid rgb(0, 17, 255);
+  border-radius: 1.1rem;
 }
 
 td {
@@ -664,6 +666,21 @@ td:first-child {
   }
 }
 
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
 #cariCustomer {
   width: 60%;
   z-index: 99999999;
@@ -716,13 +733,31 @@ td:first-child {
     box-shadow: 0 0 5px white;
   }
 
+  #searchResult::after, #searchResult::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, blue, rgb(0, 162, 255), rgb(0, 255, 204));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.6rem;
+    z-index: -1;
+    padding: 7px;
+    animation: 4s spin linear infinite;
+  }
+
+  #searchResult::before {
+    filter: blur(6px);
+  }
+
   #searchResult {
-    background-color: rgba(255, 255, 255, 0.053);
+    position: relative;
+    background-color: rgb(40, 40, 40);
     padding: 1rem;
     border-radius: 0.6rem;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 4px rgb(0, 119, 255);
+    box-shadow: 0 0 4px rgba(0, 119, 255, 0.555);
     margin-top: 1.1rem;
     p {
       text-transform: capitalize;
